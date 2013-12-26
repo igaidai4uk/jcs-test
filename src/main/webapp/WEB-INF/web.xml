@@ -1,0 +1,75 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+    
+    <listener>
+        <listener-class>com.jcs.example.CacheListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>put</servlet-name>
+        <servlet-class>com.jcs.example.PutTestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>put</servlet-name>
+        <url-pattern>/put</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>get</servlet-name>
+        <servlet-class>com.jcs.example.GetTestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>get</servlet-name>
+        <url-pattern>/get</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>com.jcs.example.UpdateCacheServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+
+    <listener>
+        <listener-class>com.jcs.example.MyAdminServletContextListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>CodahaleMetrics</servlet-name>
+        <servlet-class>com.codahale.metrics.servlets.MetricsServlet</servlet-class>
+        <init-param>
+            <param-name>metrics-uri</param-name>
+            <param-value>/metrics</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ping-uri</param-name>
+            <param-value>/ping</param-value>
+        </init-param>
+        <init-param>
+            <param-name>healthcheck-uri</param-name>
+            <param-value>/health</param-value>
+        </init-param>
+        <init-param>
+            <param-name>threads-uri</param-name>
+            <param-value>/threads</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CodahaleMetrics</servlet-name>
+        <url-pattern>/CodahaleMetrics/*</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>

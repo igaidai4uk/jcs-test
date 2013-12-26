@@ -1,0 +1,1 @@
+Small web application that tests Java Caching System with TCP Lateral Cache.
